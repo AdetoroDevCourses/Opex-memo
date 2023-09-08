@@ -1,6 +1,6 @@
 # User Stories for Memo
 
-1. [x] Replace current sticky note system
+1. [ ] Replace current sticky note system
 2. [ ] Add a public facing page with basic contact info 
 3. [ ] Add an employee login to the Memo app 
 4. [ ] Provide a welcome page after login 
