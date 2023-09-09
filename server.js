@@ -1,10 +1,20 @@
 const express = require('express');
 const app = express()
 const path = require('path')
+const cookieParser = require('cookie-parser');
+const cors =  require('cors')
+const { logger } = require('./middlewares/logger')
+const errorhandler = require('./middlewares/errorHandler')
+
+
+
+
 const PORT = process.env.PORT || 5000
-
-
-app.use('/', express.static(path.join(__dirname, '/public')))
+app.use(cookieParser);
+app.use(cors())
+app.use(logger)
+app.use(express.json())
+app.use('/', express.static(path.join(__dirname, 'public')))
 app.use('/', require('./routes/routes'))
 
 app.all('*', (req, res) => {
@@ -18,5 +28,6 @@ app.all('*', (req, res) => {
     }
 })
 
+app.use(errorhandler)
 
 app.listen(PORT, () => console.log(`Sever running on port ${PORT}`))
