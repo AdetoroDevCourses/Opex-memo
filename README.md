@@ -6,5 +6,5 @@
 - MongoDb
 - ReactJs
 
-"username": "opex01", 
-    "password": ""opex1023, 
+## NOTE
+Rename sampleENV.env to .env
